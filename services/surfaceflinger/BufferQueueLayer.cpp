@@ -576,7 +576,7 @@ status_t BufferQueueLayer::setDefaultBufferProperties(uint32_t w, uint32_t h, Pi
     setDefaultBufferSize(w, h);
     mConsumer->setDefaultBufferFormat(format);
     mConsumer->setConsumerUsageBits(usageBits);
-
+    mConsumer->setConsumerUsageBits(getEffectiveUsage(usageBits));
     return NO_ERROR;
 }
 
